@@ -6,7 +6,7 @@ before_install:
   - docker build -t jaykishank/react-test -f ./client/Dockerfile.dev ./client/.
 
 script:
-  - docker run -e CI=true jaykishank:react-test npm run test -- --coverage
+  - docker run -e CI=true jaykishank/react-test npm run test -- --coverage
 
 after_success:
   - docker build -t jaykishank/multi-client ./client
